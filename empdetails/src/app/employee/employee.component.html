@@ -1,0 +1,30 @@
+<div class="content">
+  <h2 style="text-align: center;">Employee Details</h2>
+<br>
+  <form action="">
+    <table>
+      <thead>
+        <th *ngIf="Id">EMPID</th>
+        <th>EMP Name</th>
+        <th>Designation</th>
+        <th>DoB</th>
+        <th>Address</th>
+        <th *ngIf="Salary">Salary</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let list of employeeDetails">
+          <td *ngIf="Id">{{list.empId}}</td>
+          <td>{{list.empName}}</td>
+          <td>{{list.designation}}</td>
+          <td>{{list.dateOfBirth}}</td>
+          <td>{{list.address}}</td>
+          <td *ngIf="Salary">{{list.salary | currency:"INR"}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </form> <br>
+  <!-- <button type="submit" (click)="change()">{{statusId?'Hide':'Show'}} Employee
+Id</button> -->
+  <button type="submit" (click)="HideEmployeeId()">{{Id? 'Hide the EmpID':'EmpId Hided'}}</button><br><br>
+  <button type="submit" (click)="HideEmployeeSalary()">{{Salary? 'Hide EmpSalary':'EmpSalary Hided'}}</button>
+</div>
